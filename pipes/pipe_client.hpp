@@ -1,13 +1,34 @@
-//
-//  pipe_client.hpp
-//  pipes
-//
-//  Created by Artyom on 06.07.2022.
-//
+#ifndef pipe_client_h
+#define pipe_client_h
 
-#ifndef pipe_client_hpp
-#define pipe_client_hpp
+#include <iostream>
+#include <vector>
+#include <poll.h>
+#include <unistd.h> //pipe
+#include <fcntl.h> //F_GETFL
 
-#include <stdio.h>
+// can't in blocking mode
+class PipeClient{
+    
+private:
+    const unsigned int timeout_ = 1000;
+    
+    int pipeHandleOut_ = 0;
+    int pipeHandleIn_ = 0;
+    
+    const size_t bufferSize = 1024;
+    
+private:
+    void getResponse();
+    
+public:
+    PipeClient( int pipeIn, int pipeOut);
+    
+    void sendRequest( const std::string& message );
+};
 
-#endif /* pipe_client_hpp */
+
+#endif /* pipe_client_h */
+
+
+ 

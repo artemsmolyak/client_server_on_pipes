@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9ACB11C32875BBE100BC76E5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB11C22875BBE100BC76E5 /* main.cpp */; };
+		9ACB11CB2875BC1F00BC76E5 /* pipe_client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB11C92875BC1F00BC76E5 /* pipe_client.cpp */; };
+		9ACB11CE2875BCB000BC76E5 /* pipe_server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB11CC2875BCB000BC76E5 /* pipe_server.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		9ACB11BF2875BBE100BC76E5 /* pipes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pipes; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ACB11C22875BBE100BC76E5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9ACB11C92875BC1F00BC76E5 /* pipe_client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = pipe_client.cpp; sourceTree = "<group>"; };
+		9ACB11CA2875BC1F00BC76E5 /* pipe_client.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = pipe_client.hpp; sourceTree = "<group>"; };
+		9ACB11CC2875BCB000BC76E5 /* pipe_server.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = pipe_server.cpp; sourceTree = "<group>"; };
+		9ACB11CD2875BCB000BC76E5 /* pipe_server.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = pipe_server.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				9ACB11C22875BBE100BC76E5 /* main.cpp */,
+				9ACB11C92875BC1F00BC76E5 /* pipe_client.cpp */,
+				9ACB11CA2875BC1F00BC76E5 /* pipe_client.hpp */,
+				9ACB11CC2875BCB000BC76E5 /* pipe_server.cpp */,
+				9ACB11CD2875BCB000BC76E5 /* pipe_server.hpp */,
 			);
 			path = pipes;
 			sourceTree = "<group>";
@@ -119,6 +129,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACB11CE2875BCB000BC76E5 /* pipe_server.cpp in Sources */,
+				9ACB11CB2875BC1F00BC76E5 /* pipe_client.cpp in Sources */,
 				9ACB11C32875BBE100BC76E5 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

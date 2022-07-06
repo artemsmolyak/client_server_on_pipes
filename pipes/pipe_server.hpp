@@ -1,13 +1,36 @@
-//
-//  pipe_server.hpp
-//  pipes
-//
-//  Created by Artyom on 06.07.2022.
-//
+#ifndef PipeServer_h
+#define PipeServer_h
 
-#ifndef pipe_server_hpp
-#define pipe_server_hpp
+#include <iostream>
+#include <vector>
+#include <poll.h>
+#include <unistd.h> //pipe
+#include <fcntl.h> //F_GETFL
+ 
 
-#include <stdio.h>
+// can't in blocking mode
+class PipeServer{
+    
+private:
+    const unsigned int timeout_ = 1000;
+    std::atomic<bool> quitFlag_ = false; 
+    
+    int pipeHandleOut_ = 0;
+    int pipeHandleIn_ = 0;
+    
+    const size_t bufferSize = 1024;
+    
+private:
+    void waitRequest();
+    void writeResponse(const std::vector<unsigned char>& data);
+    
+public:
+    PipeServer( int pipeIn, int pipeOut);
+    
+    void start();
+    void stop();
+};
 
-#endif /* pipe_server_hpp */
+
+#endif /* PipeServer_h */
+
